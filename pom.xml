@@ -6,15 +6,12 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.microsoft.store</groupId>
-  <artifactId>partnercenter</artifactId>
+  <groupId>com.appdirect.microsoft</groupId>
+  <artifactId>partnercenter-sdk</artifactId>
   <version>1.15.4</version>
   <packaging>jar</packaging>
   <name>Partner Center SDK for Java</name>
-  <description>SDK for accessing Microsoft Partner Center API.</description>
-  <url>
-    https://github.com/microsoft/partner-center-java
-  </url>
+  <description>AppDirect´s private fork of the SDK for accessing Microsoft Partner Center API.</description>
   <licenses>
     <license>
       <name>The MIT License (MIT)</name>
@@ -26,30 +23,29 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <scm>
-    <url>scm:git:https://github.com/microsoft/partner-center-java</url>
-    <connection>scm:git:git@github.com:microsoft/partner-center-java.git</connection>
+    <url>https://github.com/AppDirect/partnercenter-sdk</url>
+    <connection>scm:git:ssh://git@github.com/AppDirect/partnercenter-sdk.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/AppDirect/partnercenter-sdk.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-  <developers>
-    <developer>
-      <id>microsoft</id>
-      <name>Microsoft</name>
-    </developer>
-  </developers>
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/microsoft/partner-center-java/issues</url>
-  </issueManagement>
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+  <repositories>
     <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>appdirect-artifactory</id>
+      <name>appdirect-artifactory</name>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <url>https://artifactory.appdirect.tools/artifactory/repo</url>
     </repository>
-  </distributionManagement>
+    <repository>
+      <id>appdirect-lib-snapshots</id>
+      <name>appdirect-libs-snapshot</name>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <url>https://artifactory.appdirect.tools/artifactory/libs-snapshot</url>
+    </repository>
+  </repositories>
   <profiles>
     <profile>
       <id>release</id>
